@@ -1,0 +1,20 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: redis
+    networks:
+      - minha-rede
+
+  app:
+    build: .
+    container_name: app
+    depends_on:
+      - redis
+    networks:
+      - minha-rede
+    command: ["sh", "-c", "python app/cache.py & python app/produtor.py & python app/consumidor.py"]
+
+networks:
+  minha-rede:
+    driver: bridge
