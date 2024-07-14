@@ -51,8 +51,10 @@ Processamento: Decodifica o número (armazenado como bytes) e o processa.<br>
 Delay: Adiciona um pequeno delay (time.sleep(1)) para simular o tempo de processamento.<br>
 
 • Execução<br>
-Para executar esses scripts:<br>
-
-utiliza-se o comando:<br>
+Para executar esses scripts utiliza-se o comando:<br>
 docker-compose up --build<br>
+
+• Em caso de execução individual:<br>
+1. Execute primeiro o produtor.py para adicionar números à fila.<br>
+2. Em seguida, execute o consumidor.py para consumir os números da fila.<br>
 
